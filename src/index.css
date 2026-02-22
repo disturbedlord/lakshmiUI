@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 6%;
+    --foreground: 40 30% 92%;
+
+    --card: 40 15% 10%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 40 15% 10%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 43 72% 52%;
+    --primary-foreground: 40 20% 6%;
+
+    --secondary: 0 45% 25%;
+    --secondary-foreground: 40 30% 92%;
+
+    --muted: 40 10% 15%;
+    --muted-foreground: 40 15% 55%;
+
+    --accent: 43 60% 40%;
+    --accent-foreground: 40 30% 92%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 30% 20%;
+    --input: 43 20% 18%;
+    --ring: 43 72% 52%;
+
+    --radius: 0.375rem;
+
+    --gold: 43 72% 52%;
+    --gold-light: 43 80% 65%;
+    --gold-dark: 43 60% 35%;
+    --maroon: 0 45% 25%;
+    --maroon-deep: 0 50% 18%;
+    --ivory: 40 30% 92%;
+    --ivory-muted: 40 20% 80%;
+    --jet: 40 20% 6%;
+
+    --sidebar-background: 40 15% 8%;
+    --sidebar-foreground: 40 30% 92%;
+    --sidebar-primary: 43 72% 52%;
+    --sidebar-primary-foreground: 40 20% 6%;
+    --sidebar-accent: 40 10% 15%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 43 30% 20%;
+    --sidebar-ring: 43 72% 52%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-sans-ui {
+    font-family: var(--font-sans);
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(43 72% 52%), hsl(43 80% 65%), hsl(43 72% 52%));
+  }
+  .gold-text-gradient {
+    background: linear-gradient(135deg, hsl(43 72% 52%), hsl(43 80% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gold-glow {
+    box-shadow: 0 0 20px hsl(43 72% 52% / 0.3), 0 0 60px hsl(43 72% 52% / 0.1);
+  }
+  .gold-glow-hover:hover {
+    box-shadow: 0 0 30px hsl(43 72% 52% / 0.4), 0 0 80px hsl(43 72% 52% / 0.15);
+  }
+  .maroon-gradient {
+    background: linear-gradient(135deg, hsl(0 45% 25%), hsl(0 50% 18%));
+  }
+}
+
+/* Gold rate ticker animation */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker-scroll 20s linear infinite;
+}
+
+/* Particle animation */
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+.animate-particle {
+  animation: float-particle var(--duration, 10s) var(--delay, 0s) infinite;
+}
