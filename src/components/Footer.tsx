@@ -12,7 +12,8 @@ const Footer = () => {
               Lakshmi Thanga Maligai
             </h3>
             <p className="text-muted-foreground text-sm font-body leading-relaxed">
-              Your one-stop shop for luxury jewellery. Trusted by families for generations in Polur.
+              Your one-stop shop for luxury jewellery. Trusted by families for
+              generations in Polur.
             </p>
           </div>
 
@@ -40,7 +41,12 @@ const Footer = () => {
               Categories
             </h4>
             <div className="flex flex-col gap-2">
-              {["Gold Jewellery", "Silver Jewellery", "Diamond Jewellery", "Gift Articles"].map((cat) => (
+              {[
+                "Gold Jewellery",
+                "Silver Jewellery",
+                "Diamond Jewellery",
+                "Gift Articles",
+              ].map((cat) => (
                 <Link
                   key={cat}
                   to="/shop"
@@ -72,7 +78,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <span>info@lakshmithangamaligai.com</span>
+                <span>lakshmithangamaaligai2009@gmail.com</span>
               </div>
             </div>
           </div>
@@ -80,7 +86,8 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-xs text-muted-foreground font-sans">
-            © 2025 Lakshmi Thanga Maligai. All rights reserved. BIS Hallmark Certified.
+            © 2025 Lakshmi Thanga Maligai. All rights reserved. BIS Hallmark
+            Certified.
           </p>
         </div>
       </div>
