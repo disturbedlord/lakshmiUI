@@ -16,7 +16,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <nav className="top-0 static md:fixed left-0 right-0 z-20 bg-background/90 backdrop-blur-md border-b border-border">
       {/* Top bar */}
       <div className="bg-primary/10 py-1.5">
         <div className="container mx-auto px-4 flex justify-between items-center text-xs font-sans">
@@ -28,10 +28,16 @@ const Navbar = () => {
             Store Timings: 9:00 AM – 9:00 PM
           </span>
           <div className="flex gap-3">
-            <Link to="/shop" className="text-foreground hover:text-primary transition-colors">
+            <Link
+              to="/shop"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               <Heart className="w-4 h-4" />
             </Link>
-            <Link to="/shop" className="text-foreground hover:text-primary transition-colors">
+            <Link
+              to="/shop"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               <ShoppingBag className="w-4 h-4" />
             </Link>
           </div>
@@ -56,7 +62,9 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               className={`text-sm font-sans tracking-wider uppercase transition-colors hover:text-primary ${
-                location.pathname === link.path ? "text-primary" : "text-foreground"
+                location.pathname === link.path
+                  ? "text-primary"
+                  : "text-foreground"
               }`}
             >
               {link.label}
@@ -65,7 +73,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-foreground">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-foreground"
+        >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
@@ -86,7 +97,9 @@ const Navbar = () => {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={`text-sm font-sans tracking-wider uppercase transition-colors hover:text-primary ${
-                    location.pathname === link.path ? "text-primary" : "text-foreground"
+                    location.pathname === link.path
+                      ? "text-primary"
+                      : "text-foreground"
                   }`}
                 >
                   {link.label}
