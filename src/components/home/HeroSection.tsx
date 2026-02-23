@@ -42,7 +42,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-[clamp(1.75rem,5vw,4.5rem)] font-display font-bold leading-tight mb-2"
+              className="text-[clamp(1.5rem,5vw,4.5rem)] font-display font-bold leading-tight mb-2"
             >
               Timeless
               <span className="gold-text-gradient block">Elegance</span>
