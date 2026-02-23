@@ -12,6 +12,7 @@ import Appointment from "./pages/Appointment";
 import NotFound from "./pages/NotFound";
 import Price from "./pages/Price";
 import { PriceProvider } from "./components/contextProvider/PriceContext";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <Sonner />
       <PriceProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
