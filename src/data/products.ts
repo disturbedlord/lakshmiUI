@@ -9,8 +9,7 @@ export interface Product {
   name: string;
   category: string;
   metalType: string;
-  price: number;
-  weight: string;
+  weight: number;
   purity: string;
   image: string;
   occasion: string;
@@ -18,7 +17,8 @@ export interface Product {
   isFeatured?: boolean;
   description: string;
   stoneDetails?: string;
-  makingCharges?: string;
+  makingCharges?: number;
+  type?: string;
 }
 
 export const products: Product[] = [
@@ -27,92 +27,110 @@ export const products: Product[] = [
     name: "Royal Temple Necklace Set",
     category: "Necklace",
     metalType: "Gold",
-    price: 245000,
-    weight: "45g",
+    weight: 0.45,
     purity: "22K",
     image: productNecklace,
     occasion: "Wedding",
+    type: "gold22kPrice",
     isNew: true,
     isFeatured: true,
-    description: "Exquisite 22K gold temple necklace with traditional South Indian craftsmanship, kundan stone setting and matching jhumka earrings.",
+    description:
+      "Exquisite 22K gold temple necklace with traditional South Indian craftsmanship, kundan stone setting and matching jhumka earrings.",
     stoneDetails: "Ruby, Emerald, Kundan",
-    makingCharges: "12%",
+    makingCharges: 12,
   },
   {
     id: "2",
     name: "Antique Gold Bangles Set",
     category: "Bangles",
     metalType: "Gold",
-    price: 128000,
-    weight: "32g",
+    weight: 0.32,
     purity: "22K",
     image: productBangles,
     occasion: "Festival",
+    type: "gold22kPrice",
     isFeatured: true,
-    description: "Set of 4 beautifully crafted antique finish gold bangles with intricate traditional motifs.",
-    makingCharges: "10%",
+    description:
+      "Set of 4 beautifully crafted antique finish gold bangles with intricate traditional motifs.",
+    makingCharges: 10,
   },
   {
     id: "3",
     name: "Solitaire Diamond Ring",
     category: "Rings",
     metalType: "Diamond",
-    price: 185000,
-    weight: "5.2g",
+    weight: 0.52,
     purity: "18K",
     image: productRing,
     occasion: "Engagement",
+    type: "gold18kPrice",
     isNew: true,
     isFeatured: true,
-    description: "Stunning 1.5 carat solitaire diamond set in 18K gold band with VVS1 clarity.",
+    description:
+      "Stunning 1.5 carat solitaire diamond set in 18K gold band with VVS1 clarity.",
     stoneDetails: "1.5ct Diamond, VVS1, D Color",
-    makingCharges: "8%",
+    makingCharges: 8,
   },
   {
     id: "4",
     name: "Traditional Jhumka Earrings",
     category: "Earrings",
     metalType: "Gold",
-    price: 67000,
-    weight: "18g",
+    weight: 0.18,
     purity: "22K",
+    type: "gold22kPrice",
     image: productEarrings,
     occasion: "Wedding",
     isNew: true,
-    description: "Handcrafted gold jhumka earrings with meenakari work and temple design.",
+    description:
+      "Handcrafted gold jhumka earrings with meenakari work and temple design.",
     stoneDetails: "Emerald, Ruby",
-    makingCharges: "14%",
+    makingCharges: 14,
   },
   {
     id: "5",
     name: "Silver Anklet Chain",
     category: "Chains",
     metalType: "Silver",
-    price: 4500,
-    weight: "25g",
+    weight: 0.25,
+    type: "silver",
     purity: "925 Sterling",
     image: productChain,
     occasion: "Daily Wear",
-    description: "Intricately designed sterling silver anklet with traditional ghungroo bells.",
-    makingCharges: "15%",
+    description:
+      "Intricately designed sterling silver anklet with traditional ghungroo bells.",
+    makingCharges: 15,
   },
   {
     id: "6",
     name: "Gold Rope Chain",
     category: "Chains",
     metalType: "Gold",
-    price: 95000,
-    weight: "20g",
+    weight: 0.2,
     purity: "22K",
+    type: "gold22kPrice",
     image: productBangles,
     occasion: "Daily Wear",
     isNew: true,
     isFeatured: true,
-    description: "Classic 22K gold rope chain, perfect for daily wear with elegant finish.",
-    makingCharges: "8%",
+    description:
+      "Classic 22K gold rope chain, perfect for daily wear with elegant finish.",
+    makingCharges: 8,
   },
 ];
 
-export const categories = ["Necklace", "Bangles", "Rings", "Earrings", "Chains"];
+export const categories = [
+  "Necklace",
+  "Bangles",
+  "Rings",
+  "Earrings",
+  "Chains",
+];
 export const metalTypes = ["Gold", "Silver", "Diamond"];
-export const occasions = ["Wedding", "Festival", "Engagement", "Daily Wear", "Gifting"];
+export const occasions = [
+  "Wedding",
+  "Festival",
+  "Engagement",
+  "Daily Wear",
+  "Gifting",
+];

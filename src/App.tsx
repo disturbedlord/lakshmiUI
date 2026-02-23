@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Appointment from "./pages/Appointment";
 import NotFound from "./pages/NotFound";
 import Price from "./pages/Price";
+import { PriceProvider } from "./components/contextProvider/PriceContext";
 
 const queryClient = new QueryClient();
 
@@ -19,18 +20,20 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/appointment" element={<Appointment />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/price" element={<Price />} />
-        </Routes>
-      </BrowserRouter>
+      <PriceProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/appointment" element={<Appointment />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/price" element={<Price />} />
+          </Routes>
+        </BrowserRouter>
+      </PriceProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

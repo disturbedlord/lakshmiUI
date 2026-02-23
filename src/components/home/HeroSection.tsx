@@ -23,12 +23,12 @@ const HeroSection = () => {
         {/* Grid overlay */}
         <div
           className="
-    pointer-events-none
+ 
     absolute inset-0
       grid grid-cols-2
   "
         >
-          <div className=" flex flex-col justify-center items-start pl-8 sm:pl-20">
+          <div className=" flex flex-col justify-center items-start pl-8 sm:pl-20 pt-0 md:pt-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

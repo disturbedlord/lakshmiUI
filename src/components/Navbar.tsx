@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="top-0 static md:fixed left-0 right-0 z-20 bg-background/90 backdrop-blur-md border-b border-border">
       {/* Top bar */}
       <div className="bg-primary/10 py-1.5">
-        <div className="container mx-auto px-4 flex justify-between items-center text-xs font-sans">
+        <div className="mx-auto px-4 sm:px-4 flex justify-between items-center text-xs font-sans">
           <div className="flex items-center gap-1 text-primary">
             <Phone className="w-3 h-3" />
             <span>+91 9500405009</span>

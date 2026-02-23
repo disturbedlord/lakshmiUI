@@ -1,10 +1,24 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
-import { products } from "@/data/products";
+import { Product, products } from "@/data/products";
+import { getPrice } from "../contextProvider/PriceContext";
+import { useEffect, useState } from "react";
+import { Loader } from "../common/reusableComponents";
+import { CalculateLatestPrice } from "../common/productInfoConverter";
 
 const FeaturedSection = () => {
+  const [loading, setLoading] = useState(true);
+
   const featured = products.filter((p) => p.isFeatured);
+
+  const priceData = getPrice();
+
+  useEffect(() => {
+    if (priceData && Object.entries(priceData).length > 0) {
+      setLoading(false);
+    }
+  }, [priceData]);
 
   return (
     <section className="py-20 bg-muted">
@@ -15,8 +29,12 @@ const FeaturedSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="font-sans text-xs tracking-[0.3em] uppercase text-primary">Handpicked</span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mt-2">Featured Collections</h2>
+          <span className="font-sans text-xs tracking-[0.3em] uppercase text-primary">
+            Handpicked
+          </span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mt-2">
+            Featured Collections
+          </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -54,9 +72,16 @@ const FeaturedSection = () => {
                   <h3 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-1">
                     {product.name}
                   </h3>
-                  <p className="font-sans font-semibold text-primary">
-                    ₹{product.price.toLocaleString("en-IN")}
-                  </p>
+                  {loading ? (
+                    <Loader />
+                  ) : (
+                    <p className="font-sans font-semibold text-primary">
+                      ₹
+                      {CalculateLatestPrice(priceData, product).toLocaleString(
+                        "en-IN",
+                      )}
+                    </p>
+                  )}
                 </div>
               </Link>
             </motion.div>
