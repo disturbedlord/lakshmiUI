@@ -52,7 +52,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-[clamp(0.6rem,1vw,4.5rem)] font-body text-ivory-muted mb-8 max-w-lg"
+              className="text-[clamp(0.55rem,1vw,4.5rem)] font-body text-ivory-muted mb-8 max-w-lg"
             >
               Your one-stop shop for luxury jewellery. Handcrafted with passion,
               worn with pride — from our family to yours.
